@@ -46,6 +46,33 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
 
+  @font-face {
+    font-family: 'Monoton';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Monoton'), local('Monoton-Regular'), url(https://fonts.gstatic.com/s/monoton/v9/5h1aiZUrOngCibe4TkHLQg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Bebas Neue Regular'), local('BebasNeue-Regular'), url(https://fonts.gstatic.com/s/bebasneue/v1/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: 'Bungee Outline';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Bungee Outline'), local('BungeeOutline-Regular'), url(https://fonts.gstatic.com/s/bungeeoutline/v5/_6_mEDvmVP24UvU2MyiGDslL3TgwaBM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
 /*Main Styles*/
 
 *{
@@ -67,17 +94,17 @@ section {
     height: auto;
 }
 
-p {
-    line-height: 2.0rem;
-    font-size: 1.5rem;
-}
 
 h2 {
     font-size: 2.5rem
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 2rem;
 }
 
 
@@ -90,11 +117,12 @@ header {
     height: 65px;
     display: flex;
     justify-content: center;
-    background-color: rgba(87, 159, 211, 0.753);
+    background-color: rgb(87, 159, 211);
     align-items: center;
     width: 100%;
     border-bottom: 2px solid black;
-    position: fixed
+    position: fixed;
+    z-index: 10;
 }
 
 header h1 {
@@ -104,31 +132,42 @@ header h1 {
 
 nav {
     display: flex;
-    margin-right: 16px;
+    width: 50%;
 }
 
 nav ul {
     display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 
 
 nav ul li {
-    margin-left: 32px;
-    margin-right:32px;
+    padding: 16px 16px;
+    margin-left: 16px;
+    margin-right: 16px;
     color: white;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 30px;
 }
 
+
 nav ul li:hover {
-    text-decoration: underline;
+    background-color: rgb(97, 96, 96);
+    transition: background-color .5s linear;
+    
 }
 
 /*intro*/
 
 #intro {
-    height: 800px;
+    height: 700px;
     width: 100%;
-    background-image: linear-gradient(rgba(17,57,93,0.4430147058823529) 0%, rgba(13,78,138,0.6867121848739496) 100%), url(../images/background_2.jpg);
+    background-image: url(../images/background.jpeg);
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,35 +176,110 @@ nav ul li:hover {
 .name_container {
     width: 500px;
     height: 500px;
-    z-index: 10;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
+
 .name_container h1 {
-    color: lightgray;
-    font-family: 'Montserrat';
+    color: white;
+    font-family: 'Bebas Neue';
+    font-size: 7rem;
     font-weight: 400;
+}
+
+.name_container h3 {
+    color: lightgray;
 }
 
 /*bio*/
 
 #bio {
-    margin: 16px 16px;
+        border-bottom: 2px solid black;
+        padding-bottom: 32px;
+        padding-top: 32px;
+}
+
+#bio img {
+    border-radius: 50%;
+    height: 25%;
+    width: 25%;
+    margin: 32px auto;
+    display: block;
 }
 
 #bio h2 {
     text-align: center;
     margin-bottom: 32px;
-    margin-top: 32px;
     
 }
 #bio p {
-    width: 800px;
+    width: 60%;
     margin: auto;
+    font-size: 1.5rem;
+    line-height: 2.0rem;
 }
 
+/*wiritings*/
+#writings {
+    display: flex;
+    padding: 32px 15%;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    background-image: url(../images/books_background.jpg);
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid black;
+}
+
+.writing_container {
+    margin: 16px 32px;
+    width: 300px;
+    height: 200px;
+    border-bottom: 2px solid black;
+    padding: 16px 16px;
+    background-color: rgba(255, 255, 255, 0.938);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.writing_container:hover {
+        transform: scale(1.1);
+        transition: all .25s ease-in-out;
+        box-shadow: -1px 0px 7px 5px #292A33;
+}
+
+
+#writings a {
+    color: black;
+}
+
+/*footer*/
+ 
+footer {
+     height: 4rem;
+     background-color:rgb(87, 159, 211);
+     color: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-left: 16px;
+     padding-right: 16px;
+    }
+
+    i {
+        margin-left: 16px;
+        margin-right: 16px;
+        color: white;
+    }
 
 
